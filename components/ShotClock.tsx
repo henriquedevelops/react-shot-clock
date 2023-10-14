@@ -15,6 +15,8 @@ const ShotClock: FC = () => {
         setSeconds((previousSeconds) => previousSeconds - 1)
     }, 1000)
 
+    if (seconds === 0) setIsCounting(false)
+
     return () => clearInterval(timeout)
   }, [isCounting, seconds])
 
@@ -24,6 +26,11 @@ const ShotClock: FC = () => {
   }
 
   const handleStartOrStop = () => {
+    if (seconds === 0) {
+      setIsCounting(true)
+      setSeconds(24)
+    }
+
     setIsCounting(!isCounting)
   }
 
