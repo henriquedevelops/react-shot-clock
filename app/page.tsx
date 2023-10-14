@@ -8,7 +8,7 @@ const Home: FC = () => {
         React Shot Clock 🏀
       </h1>
 
-      <div className="flex justify-center  gap-28">
+      <div className="flex justify-center gap-28">
         <ShotClock />
         <ShotClock />
       </div>

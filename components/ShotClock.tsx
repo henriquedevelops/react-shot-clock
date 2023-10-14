@@ -48,7 +48,7 @@ const ShotClock: FC = () => {
       </button>
 
       <p className="text-neutral-300">
-        {isCounting ? 'Counting...' : 'Stopped'}
+        {isCounting && seconds > 0 ? 'Counting...' : 'Stopped'}
       </p>
     </div>
   )
