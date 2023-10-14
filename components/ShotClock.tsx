@@ -29,9 +29,9 @@ const ShotClock: FC = () => {
     if (seconds === 0) {
       setIsCounting(true)
       setSeconds(24)
+    } else {
+      setIsCounting(!isCounting)
     }
-
-    setIsCounting(!isCounting)
   }
 
   return (
