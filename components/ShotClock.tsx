@@ -27,8 +27,8 @@ const ShotClock: FC = () => {
 
   const handleStartOrStop = () => {
     if (seconds === 0) {
-      setIsCounting(true)
       setSeconds(24)
+      setIsCounting(true)
     } else {
       setIsCounting(!isCounting)
     }
