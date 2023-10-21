@@ -8,16 +8,16 @@ test('ShotClock renders without errors', () => {
 
 test('ShotClock starts counting when "Start" is clicked', () => {
   const { getByTestId } = render(<ShotClock />)
-  const startButton = getByTestId('start-stop-button')
+  const startOrStopButton = getByTestId('start-stop-button')
 
-  fireEvent.click(startButton)
+  fireEvent.click(startOrStopButton)
 })
 
 test('ShotClock stops counting when "Stop" is clicked', () => {
   const { getByTestId } = render(<ShotClock />)
-  const startButton = getByTestId('start-stop-button')
+  const startOrStopButton = getByTestId('start-stop-button')
 
-  fireEvent.click(startButton)
+  fireEvent.click(startOrStopButton)
 
   const stopButton = getByTestId('start-stop-button')
   fireEvent.click(stopButton)
@@ -25,9 +25,9 @@ test('ShotClock stops counting when "Stop" is clicked', () => {
 
 test('ShotClock resets when "Reset" is clicked', () => {
   const { getByTestId } = render(<ShotClock />)
-  const startButton = getByTestId('start-stop-button')
+  const startOrStopButton = getByTestId('start-stop-button')
 
-  fireEvent.click(startButton)
+  fireEvent.click(startOrStopButton)
 
   const resetButton = getByTestId('reset-button')
   fireEvent.click(resetButton)
