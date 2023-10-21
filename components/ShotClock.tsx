@@ -36,13 +36,17 @@ const ShotClock: FC = () => {
 
   return (
     <div className="flex flex-col items-center min-w-[300px]">
-      <div className={`text-[16rem] text-red-600 ${counterFont.className}`}>
+      <div
+        className={`text-[16rem] text-red-600 ${counterFont.className}`}
+        data-testid="countdown-display"
+      >
         {seconds}
       </div>
 
       <button
         className="flex items-center justify-center uppercase mb-3 border-2 border-white w-28 h-10  font-semibold rounded-lg text-white"
         onClick={handleStartOrStop}
+        data-testid="start-stop-button"
       >
         {isCounting ? 'Stop' : 'Start'}
       </button>
@@ -50,11 +54,12 @@ const ShotClock: FC = () => {
       <button
         className="flex items-center justify-center uppercase border-2 border-white w-28 h-10 font-semibold mb-3 rounded-lg text-white"
         onClick={handleReset}
+        data-testid="reset-button"
       >
         Reset
       </button>
 
-      <p className="text-neutral-300">
+      <p className="text-neutral-300" data-testid="status-text">
         {isCounting ? 'Counting...' : 'Stopped'}
       </p>
     </div>
