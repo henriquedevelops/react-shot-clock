@@ -4,25 +4,25 @@ import React, { FC, useEffect, useState } from 'react'
 import localFont from 'next/font/local'
 
 const counterFont = localFont({ src: '../public/digital-7.ttf' })
+let timeoutId: NodeJS.Timeout | null = null
 
 const ShotClock: FC = () => {
   const [seconds, setSeconds] = useState(24)
   const [isCounting, setIsCounting] = useState(false)
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    timeoutId = setTimeout(() => {
       if (isCounting && seconds > 0)
         setSeconds((previousSeconds) => previousSeconds - 1)
     }, 1000)
 
     if (seconds === 0) setIsCounting(false)
-
-    return () => clearTimeout(timeout)
   }, [isCounting, seconds])
 
   const handleReset = () => {
     setIsCounting(false)
     setSeconds(24)
+    timeoutId && clearTimeout(timeoutId)
   }
 
   const handleStartOrStop = () => {
