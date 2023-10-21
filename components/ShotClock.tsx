@@ -17,7 +17,7 @@ const ShotClock: FC = () => {
 
     if (seconds === 0) setIsCounting(false)
 
-    return () => clearInterval(timeout)
+    return () => clearTimeout(timeout)
   }, [isCounting, seconds])
 
   const handleReset = () => {
