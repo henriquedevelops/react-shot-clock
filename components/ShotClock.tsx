@@ -10,7 +10,7 @@ const ShotClock: FC = () => {
   const [isCounting, setIsCounting] = useState(false)
 
   useEffect(() => {
-    const timeout = setInterval(() => {
+    const timeout = setTimeout(() => {
       if (isCounting && seconds > 0)
         setSeconds((previousSeconds) => previousSeconds - 1)
     }, 1000)
@@ -55,7 +55,7 @@ const ShotClock: FC = () => {
       </button>
 
       <p className="text-neutral-300">
-        {isCounting && seconds > 0 ? 'Counting...' : 'Stopped'}
+        {isCounting ? 'Counting...' : 'Stopped'}
       </p>
     </div>
   )
